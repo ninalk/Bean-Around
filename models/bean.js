@@ -56,9 +56,25 @@ const beanSchema = new Schema({
   },
   region: String,
   reviews: [reviewSchema],
-  certifications: {
-    type: String,
-    enum: ['Fair Trade', 'USDA Organic', ' UTZ Certified', 'Rainforest Alliance', 'Smithsonian Bird Friendly']
+  fairTrade: {
+    type: Boolean,
+    default: false,
+  },
+  usdaOrganic: {
+    type: Boolean,
+    default: false
+  },
+  utzCertified: {
+    type: Boolean,
+    default: false
+  },
+  rainforestAlliance: {
+    type: Boolean,
+    default: false
+  },
+  smithsonianBF: {
+    type: Boolean,
+    default: false
   }
 }, {
   timestamps: true

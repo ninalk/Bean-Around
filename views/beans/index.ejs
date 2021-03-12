@@ -33,6 +33,12 @@
               <td><%= b.blendName %></td>
               <td><%= b.region %></td>
               <td><a href="/beans/<%= b._id %>">DETAILS</a></td>
+              <td>
+                <form action="/beans/<%= b._id %>?_method=DELETE"
+                  class="delete-form" method="POST">
+                  <button type="submit">DELETE</button>
+                </form>
+              </td>
             </tr>
             <% }) %>
           <!-- Close the forEach using EJS here -->

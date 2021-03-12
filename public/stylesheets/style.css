@@ -61,9 +61,14 @@ a {
   grid-column-end: 5;
 }
 
-th, td {
+th {
   width: 20vw;
   height: 8vh;
+  text-align: center;
+} 
+
+td {
+  width: 20vw;
   text-align: center;
 }
 

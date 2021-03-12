@@ -12,6 +12,9 @@ router.get('/new', beansCtrl.new);
 router.post('/', beansCtrl.create);
 
 // show bean post
+router.get('/:id', beansCtrl.show);
 
+// delete bean entry
+router.delete('/:id', beansCtrl.delete);
 
 module.exports = router;

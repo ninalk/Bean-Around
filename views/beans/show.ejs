@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Bean Around</title>
+</head>
+<body>
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="/beans">BEAN AROUND</a></li>
+      <li><a href="/logout">Log Out</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-content">
+    <a href="/beans" class="my-bean-link">MY BEANS</a>
+    <a href="/beans/new" class="add-bean-link">ADD BEAN</a>
+    <section class="display-container">
+      <div><%= bean.roaster %> - <%= bean.blendName %></div>
+        <div>
+          <div>Roast: <%= bean.roast%></div>
+          <div>Region: <%= bean.region%></div>
+          <div>Certifications: </div>
+          <div>Fair Trade: <%= bean.fairTrade ? 'Yes' : 'No' %></div>
+          <div>USDA Organic: <%= bean.usdaOrganic ? 'Yes' : 'No' %></div>
+          <div>UTZ Certified: <%= bean.utzCertified ? 'Yes' : 'No' %></div>
+          <div>Rainforest Alliance: <%= bean.rainforestAlliance ? 'Yes' : 'No' %></div>
+          <div>Smithsonian Bird Friendly: <%= bean.smithsonianBF ? 'Yes' : 'No' %></div>
+          <div>Review: </div>
+        </div>
+    </section>
+  </div>
+</body>
+</html>
