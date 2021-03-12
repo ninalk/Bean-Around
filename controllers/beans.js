@@ -21,9 +21,9 @@ function newBean(req,res) {
 function create(req, res) {
   
   const bean = new Bean(req.body);
-  console.log(bean, ' THIS IS THE beanDoc')
   // assign the logged in user's id
-  bean.user = req.user._id;
+  bean.userId = req.user._id;
+  console.log(bean, ' THIS IS THE beanDoc')
   bean.save(function(err) {
     if (err) return res.render('beans/new');
     
