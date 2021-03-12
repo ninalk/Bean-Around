@@ -8,4 +8,10 @@ router.get('/', beansCtrl.index);
 // view a form to add a bean
 router.get('/new', beansCtrl.new);
 
+// post the new bean
+router.post('/', beansCtrl.create);
+
+// show bean post
+
+
 module.exports = router;

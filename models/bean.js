@@ -44,8 +44,13 @@ const reviewSchema = new Schema({
 
 // create bean model
 const beanSchema = new Schema({
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
   roaster: String,
-  blend: {
+  blendName: String,
+  roast: {
     type: String,
     enum: ['light', 'medium', 'dark']
   },

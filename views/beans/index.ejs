@@ -23,15 +23,15 @@
         <thead>
           <th>Roaster</th>
           <th>Blend</th>
-          <th>Overall Rating</th>
+          <th>Region</th>
         </thead>
         <tbody>
           <!-- Write the line of EJS to iterate over beans using forEach -->
           <% beans.forEach(function(b){ %>
-            <tr> 
+            <tr class="bean-values"> 
               <td><%= b.roaster %></td>
-              <td><%= b.blend %></td>
-              <td><%= b.blend %></td>
+              <td><%= b.blendName %></td>
+              <td><%= b.region %></td>
               <td><a href="/beans/<%= b._id %>">DETAILS</a></td>
             </tr>
             <% }) %>
