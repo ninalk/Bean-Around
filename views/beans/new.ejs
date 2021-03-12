@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" class="form-page">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Bean Around</title>
+</head>
+<body>
+  <form id="new-form" action="/movies" method="POST">
+    <label>Roaster:</label>
+    <input type="text" name="roaster"><br>
+    <label>Blend Name:</label>
+    <input type="text" name="roaster"><br>
+    <label>Region</label>
+    <input type="text" name="region"><br>
+    <label>Roast:</label>
+    <select name="blend">
+      <option value="light">light</option>
+      <option value="medium">medium</option>
+      <option value="dark">dark</option>
+    </select><br>
+    <label>Certifications:</label>
+    <input type="checkbox" id="fair-trade" name="Fair Trade">
+    <label for="fair-trade">Fair Trade</label><br>
+    <input type="checkbox" id="usda-organic" name="USDA Organic">
+    <label for="usda-organic">USDA Organic</label><br>
+    <input type="checkbox" name="UTZ Certified">
+    <label for="utz-certified">UTZ Certified</label><br>
+    <input type="checkbox" id="rainforest-alliance" name="Rainforest Alliance">
+    <label for="rainforest-alliance">Rainforest Alliance</label><br>
+    <input type="checkbox" id="smithsonian" name="Smithosonian Bird Friendly">
+    <label for="smithsonian">Smithosonian Bird Friendly</label><br>
+    <input type="submit" value="Add Bean">
+  </form>
+  
+</body>
+</html>

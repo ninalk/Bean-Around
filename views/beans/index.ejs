@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="home-page">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Bean Around</title>
+</head>
+<body>
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="/beans">BEAN AROUND</a></li>
+      <li><a href="/logout">Log Out</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-content">
+    <a href="/beans" class="my-bean-link">MY BEANS</a>
+    <a href="/beans/new" class="add-bean-link">ADD BEAN</a>
+    <section class="display-container">
+      <table>
+        <thead>
+          <th>Roaster</th>
+          <th>Blend</th>
+          <th>Overall Rating</th>
+        </thead>
+        <tbody>
+          <!-- Write the line of EJS to iterate over beans using forEach -->
+          <% beans.forEach(function(b){ %>
+            <tr> 
+              <td><%= b.roaster %></td>
+              <td><%= b.blend %></td>
+              <td><%= b.blend %></td>
+              <td><a href="/beans/<%= b._id %>">DETAILS</a></td>
+            </tr>
+            <% }) %>
+          <!-- Close the forEach using EJS here -->
+          </tbody>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+</html>

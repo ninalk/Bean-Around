@@ -1,13 +1,26 @@
-html { 
+.landing { 
   background: url(/images/PngItem_47271.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-color: #f7f5f1;
+  background-color: #efebe5;
 }
 
+.home-page {
+  margin: 0;
+  background-color: #efebe5;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+.nav-bar ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 12px;
+  justify-content: space-between;
+  font-size: 24px;
+}
 
 .logo-wrapper {
   display: flex;
@@ -25,4 +38,45 @@ a {
   font-size: 22px;
   color: rgb(15, 16, 16); 
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-content {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 60px 300px auto 300px 60px;
+  grid-template-rows: 10% auto;
+}
+
+.display-container {
+  width: 80vw;
+  height: 80vh;
+  border: solid 10px rgb(208 178 157);
+  margin-top: 0;
+  border-radius: 1em;
+  background-color: rgb(226 211 195);
+  font-size: 20px;
+  grid-row: 2 / 7;
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
+th, td {
+  width: 20vw;
+  height: 8vh;
+  text-align: center;
+}
+
+.my-bean-link {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: left;
+  margin-left: 40px;
+  align-self: end;
+}
+.add-bean-link {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  align-self: end;
 }
