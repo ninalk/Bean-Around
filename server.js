@@ -18,6 +18,9 @@ require('./config/database');
 // configure Passport
 require('./config/passport');
 
+// require routes
+const indexRoutes = require('./routes/index');
+const usersRoutes = require('./routes/users');
 
 
 // view engine setup
@@ -50,7 +53,7 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes);
-
+app.use('/', usersRoutes);
 
 // invalid request, send 404 page
 app.use(function(req, res) {

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(// Enter your DB string, {
+mongoose.connect('mongodb://localhost/users', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true
