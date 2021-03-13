@@ -32,7 +32,6 @@ function create(req, res) {
   const bean = new Bean(req.body);
   // assign the logged in user's id
   bean.userId = req.user._id;
-  console.log(bean, ' THIS IS THE beanDoc')
   bean.save(function(err) {
     if (err) return res.render('beans/new');
     
@@ -42,7 +41,6 @@ function create(req, res) {
 
 function show(req, res) {
   Bean.findById(req.params.id, function(err, bean) {
-    console.log(req.params.id, ' bean id')
     res.render('beans/show', { bean });
   });
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="show-page">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@
     <a href="/beans" class="my-bean-link">MY BEANS</a>
     <a href="/beans/new" class="add-bean-link">ADD BEAN</a>
     <section class="display-container">
-      <div><%= bean.roaster %> - <%= bean.blendName %></div>
+      <h2><%= bean.roaster %> - <%= bean.blendName %></h2>
         <div>
           <div>Roast: <%= bean.roast%></div>
           <div>Region: <%= bean.region%></div>
@@ -29,7 +29,112 @@
           <div>UTZ Certified: <%= bean.utzCertified ? 'Yes' : 'No' %></div>
           <div>Rainforest Alliance: <%= bean.rainforestAlliance ? 'Yes' : 'No' %></div>
           <div>Smithsonian Bird Friendly: <%= bean.smithsonianBF ? 'Yes' : 'No' %></div>
-          <div>Review: </div>
+          
+          <h4>Reviews</h4>
+          <form id="add-review-form" action="/beans/<%= bean._id %>/reviews" method="POST">
+            <table>
+              <tr>
+                <label>Aroma</label>
+                <select name="aroma">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5" selected>5</option>
+                </select>
+                <label>Flavor</label>
+                <select name="flavor">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5" selected>5</option>
+                </select>
+                <label>Acidity</label>
+                <select name="acidity">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5" selected>5</option>
+                </select>
+              </tr>
+            </table>
+              <tr>
+                <label>Body</label>
+                <select name="body">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5" selected>5</option>
+                </select>
+                <label>Bitterness</label>
+                <select name="bitterness">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5" selected>5</option>
+                </select>
+                <label>Overall</label>
+                <select name="overall">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5" selected>5</option>
+                </select>
+              </tr><br>
+            <label>Brew Method:</label>
+            <select name="brewMethod">
+              <option value="pour over">Pour over</option>
+              <option value="drip" selected>Drip</option>
+              <option value="frenchpress">Frenchpress</option>
+              <option value="aeropress">Aeropress</option>
+              <option value="siphon">Siphon</option>
+              <option value="cold brew">Cold brew</option>
+            </select><br>
+            <label>Notes:</label>
+            <textarea name="text" id="review-notes"></textarea><br>
+            <input type="submit" value="Add Review">
+          </form>
+
+          <% if (bean.reviews.length) { %>
+            <% bean.reviews.forEach(function(r) { %>
+              <table id="display-reviews">
+                <tr>
+                  <td>Brew Method</td>
+                  <td>Aroma</td>
+                  <td>Flavor</td>
+                  <td>Acidity</td>
+                  <td>Body</td>
+                  <td>Bitterness</td>
+                  <td>Overall</td>
+                  <td>Notes</td>
+                </tr>
+                <tr>
+                  <td><%= r.brewMethod %></td>
+                  <td><%= r.aroma %></td>
+                  <td><%= r.flavor %></td>
+                  <td><%= r.acidity %></td>
+                  <td><%= r.body %></td>
+                  <td><%= r.bitterness %></td>
+                  <td><%= r.overall %></td>
+                  <td><%= r.text %></td>
+                  <td>
+                    <form action="/reviews/<%= r._id %>?_method=DELETE"
+                      class="delete-review" method="POST">
+                      <button type="submit">delete</button>
+                    </form>
+                  </td>
+                </tr>
+              </table>
+            <% }); %>
+          <% } else { %> 
+            <h5>No Reviews Yet</h5>
+          <% } %>
+
         </div>
     </section>
   </div>

@@ -8,32 +8,46 @@
   <title>Bean Around</title>
 </head>
 <body>
-  <form id="new-form" action="/beans" method="POST">
-    <label>Roaster:</label>
-    <input type="text" name="roaster"><br>
-    <label>Blend Name:</label>
-    <input type="text" name="blendName"><br>
-    <label>Region</label>
-    <input type="text" name="region"><br>
-    <label>Roast:</label>
-    <select name="roast">
-      <option value="light" selected>light</option>
-      <option value="medium">medium</option>
-      <option value="dark">dark</option>
-    </select><br>
-    <label>Certifications:</label><br>
-    <input type="checkbox" id="fair-trade" name="fairTrade">
-    <label for="fair-trade">Fair Trade</label><br>
-    <input type="checkbox" id="usda-organic" name="usdaOrganic">
-    <label for="usda-organic">USDA Organic</label><br>
-    <input type="checkbox" name="utzCertified">
-    <label for="utz-certified">UTZ Certified</label><br>
-    <input type="checkbox" id="rainforest-alliance" name="rainforestAlliance">
-    <label for="rainforest-alliance">Rainforest Alliance</label><br>
-    <input type="checkbox" id="smithsonian" name="smithsonianBF">
-    <label for="smithsonian">Smithsonian Bird Friendly</label><br>
-    <input type="submit" value="Add Bean">
-  </form>
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="/beans">BEAN AROUND</a></li>
+      <li><a href="/logout">Log Out</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-content">
+    <a href="/beans" class="my-bean-link">MY BEANS</a>
+    <a href="/beans/new" class="add-bean-link">ADD BEAN</a>
+    <section class="display-container">
+      <h1>Bean Entry Form</h1>
+      <form id="new-form" action="/beans" method="POST">
+        <label>Roaster:</label>
+        <input type="text" name="roaster"><br>
+        <label>Blend Name:</label>
+        <input type="text" name="blendName"><br>
+        <label>Region:</label>
+        <input type="text" name="region"><br>
+        <label>Roast:</label>
+        <select name="roast">
+          <option value="light" selected>light</option>
+          <option value="medium">medium</option>
+          <option value="dark">dark</option>
+        </select><br>
+        <label class="certs">Certifications:</label><br>
+        <input type="checkbox" class="cb" id="fair-trade" name="fairTrade">
+        <label for="fair-trade" class="cblabel">Fair Trade</label><br>
+        <input type="checkbox" class="cb" id="usda-organic" name="usdaOrganic">
+        <label for="usda-organic" class="cblabel">USDA Organic</label><br>
+        <input type="checkbox" class="cb" name="utzCertified">
+        <label for="utz-certified" class="cblabel">UTZ Certified</label><br>
+        <input type="checkbox" class="cb" id="rainforest-alliance" name="rainforestAlliance">
+        <label for="rainforest-alliance" class="cblabel">Rainforest Alliance</label><br>
+        <input type="checkbox" class="cb" id="smithsonian" name="smithsonianBF">
+        <label for="smithsonian" class="cblabel">Smithsonian Bird Friendly</label><br>
+        <input class="add-bean" type="submit" value="Add Bean">
+      </form>
   
+    </section>
+  </div>
 </body>
 </html>

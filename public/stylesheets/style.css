@@ -7,11 +7,16 @@
   background-color: #efebe5;
 }
 
-.home-page {
+.home-page, .show-page, .form-page {
   margin: 0;
   background-color: #efebe5;
   font-family: Arial, Helvetica, sans-serif;
+  background: url(/images/2389930.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
+
 
 .nav-bar ul {
   display: flex;
@@ -19,7 +24,8 @@
   margin: 0;
   padding: 12px;
   justify-content: space-between;
-  font-size: 24px;
+  font-size: 26px;
+  font-weight: bold;
 }
 
 .logo-wrapper {
@@ -35,9 +41,14 @@
 
 a {
   text-decoration: none;
-  font-size: 22px;
-  color: rgb(15, 16, 16); 
+  font-size: 24px;
+  color: rgb(208, 211, 211); 
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.add-bean-link {
+  color:rgb(158, 222, 158);
+  font-weight: bold;
 }
 
 .main-content {
@@ -49,9 +60,12 @@ a {
 }
 
 .display-container {
-  width: 80vw;
+  max-width: 900px;
+  min-width: 900px;
+  min-height: 800px;
   height: 80vh;
   border: solid 10px rgb(208 178 157);
+  color: rgb(35, 34, 34);
   margin-top: 0;
   border-radius: 1em;
   background-color: rgb(226 211 195);
@@ -85,3 +99,72 @@ td {
   justify-self: end;
   align-self: end;
 }
+
+#display-reviews {
+  font-size: 16px;
+  width: 14vw;
+}
+
+#new-form {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.main-content h1 {
+  margin: 30px;
+  color: rgb(46, 47, 47);
+  text-align: center;
+}
+
+#new-form label {
+  margin: 5px 50px 5px 50px;
+}
+
+#new-form input {
+  vertical-align: middle;
+  margin: 5px 50px 5px 50px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 100em;
+}
+
+#new-form select {
+  vertical-align: middle;
+  margin: 5px 700px 5px 50px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 10em
+}
+
+#new-form .cb {
+  width: 40px;
+  margin: 0;
+  margin-left: 50px;
+}
+
+#new-form .cblabel {
+  margin-left: 0;
+  margin-right: 80px;
+}
+
+#new-form .certs {
+  margin-right: 800px;
+}
+
+#new-form .add-bean {
+  padding: 10px 20px;
+  background-color: rgb(45, 84, 83);
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+  margin-top: 220px;
+}
+
+#new-form .add-bean:hover {
+  background-color: rgb(92, 148, 205);
+}
+
+

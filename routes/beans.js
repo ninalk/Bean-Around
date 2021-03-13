@@ -17,4 +17,5 @@ router.get('/:id', beansCtrl.show);
 // delete bean entry
 router.delete('/:id', beansCtrl.delete);
 
+
 module.exports = router;

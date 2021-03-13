@@ -10,32 +10,32 @@ const reviewSchema = new Schema({
   aroma: {
     type: Number,
     min: 1,
-    max: 10
+    max: 5
   },
   flavor: {
     type: Number,
     min: 1,
-    max: 10
+    max: 5
   },
   acidity: {
     type: Number,
     min: 1,
-    max: 10
+    max: 5
   },
   body: {
     type: Number,
     min: 1,
-    max: 10
+    max: 5
   },
   bitterness: {
     type: Number,
     min: 1,
-    max: 10
+    max: 5
   },
   overall: {
     type: Number,
     min: 1,
-    max: 10
+    max: 5
   },
   text: String,
 }, {
@@ -79,7 +79,6 @@ const beanSchema = new Schema({
 }, {
   timestamps: true
 });
-
 
 
 module.exports = mongoose.model('Bean', beanSchema);
