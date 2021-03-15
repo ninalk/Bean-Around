@@ -20,7 +20,6 @@ require('./config/passport');
 
 // require routes
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 const beansRouter = require('./routes/beans');
 const reviewsRouter = require('./routes/reviews');
 
@@ -55,7 +54,6 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
-app.use('/', usersRouter);
 app.use('/beans', beansRouter);
 app.use('/', reviewsRouter);
 

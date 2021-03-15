@@ -36,17 +36,22 @@
 }
 
 .logo-wrapper a {
-  color: rgb(40, 39, 39);
   text-decoration: none;
 }
 
 .logo-wrapper .google-login {
-  font-size: 20px;
+  font-size: 28px;
+  color: rgb(208, 211, 211);
+}
+
+.logo-wrapper .google-login:hover {
+  color:rgb(210, 244, 210);
 }
 
 .landing-title {
-  font-size: 80px;
+  font-size: 100px;
   padding: 10%;
+  color: rgb(208, 211, 211);
 }
 
 .nav-bar a {

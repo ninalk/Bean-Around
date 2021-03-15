@@ -8,9 +8,11 @@ module.exports = {
   delete: deleteBean
 }
 
-function index(req, res) {
-  Bean.find({}, function(err, beans) {
-    res.render('beans/index', { beans });
+function index(req, res, next) {
+  Bean.find({'userId': req.user._id}, function(err, beans) {
+    res.render('beans/index', { 
+      beans, 
+    });
   });
 }
 

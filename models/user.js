@@ -7,10 +7,6 @@ const userSchema = new mongoose.Schema({
   email: String,
   avatar: String,
   googleId: String,
-  beans: {
-    type: Schema.Types.ObjectId,
-    ref: 'Bean'
-  }
 }, {
   timestamps: true
 });

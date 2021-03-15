@@ -27,19 +27,20 @@
         </thead>
         <tbody>
           <!-- Write the line of EJS to iterate over beans using forEach -->
-          <% beans.forEach(function(b){ %>
-            <tr class="bean-values"> 
-              <td><%= b.roaster %></td>
-              <td><%= b.blendName %></td>
-              <td><%= b.region %></td>
-              <td><a href="/beans/<%= b._id %>" class="see-details">see details</a></td>
-              <td>
-                <form action="/beans/<%= b._id %>?_method=DELETE"
-                  class="delete-form" method="POST">
-                  <button type="submit">DELETE</button>
-                </form>
-              </td>
-            </tr>
+            <% beans.forEach(function(b){ %>
+              <tr class="bean-values"> 
+                <td><%= b.roaster %></td>
+                <td><%= b.blendName %></td>
+                <td><%= b.region %></td>
+      
+                <td><a href="/beans/<%= b._id %>" class="see-details">see details</a></td>
+                <td>
+                  <form action="/beans/<%= b._id %>?_method=DELETE"
+                    class="delete-form" method="POST">
+                    <button type="submit">DELETE</button>
+                  </form>
+                </td>
+              </tr>
             <% }) %>
           <!-- Close the forEach using EJS here -->
           </tbody>

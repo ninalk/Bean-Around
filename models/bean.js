@@ -14,6 +14,10 @@ const reviewSchema = new Schema({
   bitterness: {type: Number, min: 1, max: 5},
   overall: {type: Number, min: 1, max: 5},
   text: String,
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  }
 }, {
   timestamp: true
 });
