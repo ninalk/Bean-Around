@@ -7,36 +7,12 @@ const reviewSchema = new Schema({
     type: String,
     enum: ['pour over', 'drip', 'frenchpress', 'aeropress', 'siphon', 'cold brew']
   },
-  aroma: {
-    type: Number,
-    min: 1,
-    max: 5
-  },
-  flavor: {
-    type: Number,
-    min: 1,
-    max: 5
-  },
-  acidity: {
-    type: Number,
-    min: 1,
-    max: 5
-  },
-  body: {
-    type: Number,
-    min: 1,
-    max: 5
-  },
-  bitterness: {
-    type: Number,
-    min: 1,
-    max: 5
-  },
-  overall: {
-    type: Number,
-    min: 1,
-    max: 5
-  },
+  aroma: {type: Number, min: 1, max: 5},
+  flavor: {type: Number, min: 1, max: 5},
+  acidity: {type: Number, min: 1, max: 5},
+  body: {type: Number, min: 1, max: 5},
+  bitterness: {type: Number, min: 1, max: 5},
+  overall: {type: Number, min: 1, max: 5},
   text: String,
 }, {
   timestamp: true
@@ -56,26 +32,11 @@ const beanSchema = new Schema({
   },
   region: String,
   reviews: [reviewSchema],
-  fairTrade: {
-    type: Boolean,
-    default: false,
-  },
-  usdaOrganic: {
-    type: Boolean,
-    default: false
-  },
-  utzCertified: {
-    type: Boolean,
-    default: false
-  },
-  rainforestAlliance: {
-    type: Boolean,
-    default: false
-  },
-  smithsonianBF: {
-    type: Boolean,
-    default: false
-  }
+  fairTrade: {type: Boolean, default: false},
+  usdaOrganic: {type: Boolean, default: false},
+  utzCertified: {type: Boolean, default: false},
+  rainforestAlliance: {type: Boolean, default: false},
+  smithsonianBF: {type: Boolean, default: false}
 }, {
   timestamps: true
 });

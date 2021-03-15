@@ -19,7 +19,7 @@
     <a href="/beans" class="my-bean-link">MY BEANS</a>
     <a href="/beans/new" class="add-bean-link">ADD BEAN</a>
     <section class="display-container">
-      <table>
+      <table class="my-beans-list">
         <thead>
           <th>Roaster</th>
           <th>Blend</th>
@@ -32,7 +32,7 @@
               <td><%= b.roaster %></td>
               <td><%= b.blendName %></td>
               <td><%= b.region %></td>
-              <td><a href="/beans/<%= b._id %>">DETAILS</a></td>
+              <td><a href="/beans/<%= b._id %>" class="see-details">see details</a></td>
               <td>
                 <form action="/beans/<%= b._id %>?_method=DELETE"
                   class="delete-form" method="POST">

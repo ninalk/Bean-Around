@@ -11,11 +11,11 @@
 <body>
   <div class="logo-container">
     <div class="logo-wrapper">
-      <a href="/beans" class="brand-logo">Bean<br>Around</a>
+      <a href="/beans" class="landing-title">Bean<br>Around</a>
       <% if (user) { %>
-        <a href="/logout">Log Out</a>
+        <a href="/logout" class="google-login">Log Out</a>
       <% } else { %>
-        <a href="/auth/google">Login with Google</a>
+        <a href="/auth/google" class="google-login">Login with Google</a>
       <% } %>
     </div>
   </div>
