@@ -1,22 +1,12 @@
-.landing { 
+.background-image { 
   background: url(/images/2389930.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-color: #efebe5;
-}
-
-.home-page, .show-page, .form-page {
-  margin: 0;
-  background-color: #efebe5;
   font-family: Arial, Helvetica, sans-serif;
-  background: url(/images/2389930.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
 }
-
 
 .nav-bar ul {
   display: flex;
@@ -39,19 +29,26 @@
   text-decoration: none;
 }
 
-.logo-wrapper .google-login {
-  font-size: 28px;
+.google-login {
+  font-size: 26px;
   color: rgb(208, 211, 211);
+  background-color: rgb(46, 47, 47);
+  width: 310px;
+  transition-duration: .5s;
+  margin: 0 auto;
+  border-radius: 1em;
+  padding: 4px;
 }
 
-.logo-wrapper .google-login:hover {
-  color:rgb(210, 244, 210);
+.google-login:hover {
+  background-color:rgb(77, 79, 77);
 }
 
 .landing-title {
   font-size: 100px;
   padding: 10%;
   color: rgb(208, 211, 211);
+  font-weight: bold;
 }
 
 .nav-bar a {
@@ -181,6 +178,7 @@
   color: white;
   cursor: pointer;
   margin-top: 20px;
+  transition-duration: 0.5s;
 }
 
 #new-form .add-bean:hover {
@@ -242,7 +240,7 @@ h3 {
   width: 3em;
 }
 
-#add-review-form .add-review {
+.add-review {
   padding: 10px 20px;
   background-color: rgb(60, 149, 103);
   border: 1px solid #ddd;
@@ -250,9 +248,10 @@ h3 {
   cursor: pointer;
   border-radius: 1em;
   margin: 10px 0;
+  transition-duration: 0.5s;
 }
 
-#add-review-form .add-review:hover {
+.add-review:hover {
   background-color: rgb(70, 198, 132);
 }
 
@@ -266,4 +265,15 @@ h3 {
 #display-reviews {
   font-size: 14px;
   width: -webkit-fill-available;
+}
+
+.edit-link {
+  background-color: rgb(237 236 237);
+  border: .5px solid black;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  font-size: 14px;
+  padding: 2px 10px;
+  border-radius: 10%;
 }

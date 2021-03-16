@@ -14,6 +14,7 @@ module.exports = {
 function index(req, res, next) {
   Bean.find({'userId': req.user._id}, function(err, beans) {
     res.render('beans/index', { 
+      title: 'BEAN AROUND',
       beans, 
     });
   });
@@ -21,7 +22,9 @@ function index(req, res, next) {
 
 // Show a form to add a new bean
 function newBean(req,res) {
-  res.render('beans/new');
+  res.render('beans/new', {
+    title: 'BEAN AROUND'
+  });
 }
 
 // Use form to create a new bean entry
@@ -31,7 +34,7 @@ function create(req, res) {
   req.body.usdaOrganic = !!req.body.usdaOrganic;
   req.body.utzCertified = !!req.body.utzCertified;
   req.body.rainforestAlliance = !!req.body.rainforestAlliance;
-  req.body.smithosonianBF = !!req.body.smithosonianBF;
+  req.body.smithsonianBF = !!req.body.smithsonianBF;
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key];
   }
@@ -49,7 +52,7 @@ function create(req, res) {
 // Show the details of each bean entry
 function show(req, res) {
   Bean.findById(req.params.id, function(err, bean) {
-    res.render('beans/show', { bean });
+    res.render('beans/show', { title: 'BEAN AROUND', bean });
   });
 }
 
@@ -64,7 +67,7 @@ function deleteBean(req, res) {
 function edit(req, res) {
   Bean.findById(req.params.id, function(err, bean) {
     if (!bean.userId.equals(req.user._id)) return res.redirect('/beans');
-    res.render('beans/edit', { bean });
+    res.render('beans/edit', { title: 'BEAN AROUND', bean });
   });
 }
 
@@ -83,7 +86,7 @@ function update(req, res) {
     bean.usdaOrganic = !!req.body.usdaOrganic;
     bean.utzCertified = !!req.body.utzCertified;
     bean.rainforestAlliance = !!req.body.rainforestAlliance;
-    bean.smithosonianBF = !!req.body.smithosonianBF;
+    bean.smithsonianBF = !!req.body.smithsonianBF;
 
     bean.save(function(err) {
       if (err) return res.render('beans/edit');

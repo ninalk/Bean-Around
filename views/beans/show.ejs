@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" class="show-page">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title>Bean Around</title>
-</head>
-<body>
-  <nav class="nav-bar">
-    <ul>
-      <li><a href="/beans">BEAN AROUND</a></li>
-      <li><a href="/logout">Log Out</a></li>
-    </ul>
-  </nav>
+<%- include('../partials/header') %>
 
-  <div class="main-content">
+  <div class="main-content show-page">
     <a href="/beans" class="my-bean-link">MY BEANS</a>
     <a href="/beans/new" class="add-bean-link">ADD BEAN</a>
     <section class="display-container">
@@ -24,16 +9,24 @@
           <ul class="bean-info">
             <li><strong>Roast: </strong><%= bean.roast%></li>
             <li><strong>Region: </strong><%= bean.region%></li>
-            <li><strong>Certifications:</strong></li>
-            <ul class="certs-wrapper"></ul>
-              <li class="certs">Fair Trade - <%= bean.fairTrade ? 'Yes' : 'No' %></li>
-              <li class="certs">USDA Organic - <%= bean.usdaOrganic ? 'Yes' : 'No' %></li>
-              <li class="certs">UTZ Certified - <%= bean.utzCertified ? 'Yes' : 'No' %></li>
-              <li class="certs">Rainforest Alliance - <%= bean.rainforestAlliance ? 'Yes' : 'No' %></li>
-              <li class="certs">Smithsonian Bird Friendly - <%= bean.smithsonianBF ? 'Yes' : 'No' %></li>
-            </ul>
+            <li><strong>Certifications:</strong></li>           
+            <% if (bean.fairTrade) { %>
+              <img src="/images/fairtrade.png" alt="">
+            <% }
+            <% if (bean.usdaOrganic) { %>
+              <img src="/images/usdaorganic.png" alt="">
+            <% }
+            <% if (bean.utzCertified) { %>
+              <img src="/images/utzcertified.png" alt="">
+            <% }
+            <% if (bean.rainforestAlliance) { %>
+              <img src="/images/rainforestalliance.png" alt="">
+            <% }
+            <% if (bean.smithsonianBF) { %>
+              <img src="/images/smithsonian.png" alt="">
+            <% } %>
           </ul><br>
-      <a href="/beans/<%= bean._id %>/edit">EDIT</a>
+      <a href="/beans/<%= bean._id %>/edit" class="edit-link">edit</a>
 
         <hr>
           
@@ -148,5 +141,5 @@
       </div>
     </section>
   </div>
-</body>
-</html>
+
+<%- include('../partials/footer') %>
