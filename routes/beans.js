@@ -14,8 +14,15 @@ router.post('/', isLoggedIn, beansCtrl.create);
 // show bean post
 router.get('/:id', isLoggedIn, beansCtrl.show);
 
+// view form to edit bean entry
+router.get('/:id/edit', isLoggedIn, beansCtrl.edit);
+
+// update specific bean entry
+router.put('/:id', isLoggedIn, beansCtrl.update);
+
 // delete bean entry
 router.delete('/:id', isLoggedIn, beansCtrl.delete);
+
 
 // custom authorization middleware function
 function isLoggedIn(req, res, next) {

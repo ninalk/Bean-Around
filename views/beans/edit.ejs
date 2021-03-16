@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="form-page">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Bean Around</title>
+</head>
+<body>
+  <nav class="nav-bar">
+    <ul>
+      <li><a href="/beans">BEAN AROUND</a></li>
+      <li><a href="/logout">Log Out</a></li>
+    </ul>
+  </nav>
+
+  <div class="main-content">
+    <a href="/beans" class="my-bean-link">MY BEANS</a>
+    <a href="/beans/new" class="add-bean-link">ADD BEAN</a>
+    <section class="display-container">
+      <h1>Edit Bean Form</h1>
+      <form id="edit-form" action="/beans/<%= bean._id %>?_method=PUT" method="POST">
+        <label>Roaster:</label>
+        <input value="<%= bean.roaster %>" name="roaster"><br>
+        <label>Blend Name:</label>
+        <input value="<%= bean.blendName %>" name="blendName"><br>
+        <label>Region:</label>
+        <input value="<%= bean.region %>" name="region"><br>
+        <label>Roast:</label>
+        <select name="roast">
+          <option value="light" selected>light</option>
+          <option value="medium">medium</option>
+          <option value="dark">dark</option>
+        </select><br>
+        <label class="certs">Certifications:</label><br>
+        <input type="checkbox" class="cb" id="fair-trade" name="fairTrade">
+        <label for="fair-trade" class="cblabel">Fair Trade</label><br>
+        <input type="checkbox" class="cb" id="usda-organic" name="usdaOrganic">
+        <label for="usda-organic" class="cblabel">USDA Organic</label><br>
+        <input type="checkbox" class="cb" name="utzCertified">
+        <label for="utz-certified" class="cblabel">UTZ Certified</label><br>
+        <input type="checkbox" class="cb" id="rainforest-alliance" name="rainforestAlliance">
+        <label for="rainforest-alliance" class="cblabel">Rainforest Alliance</label><br>
+        <input type="checkbox" class="cb" id="smithsonian" name="smithsonianBF">
+        <label for="smithsonian" class="cblabel">Smithsonian Bird Friendly</label><br>
+        <button class="edit-bean" type="submit">Edit Bean</button>   
+      </form>
+    </section>
+  </div>
+</body>
+</html>
