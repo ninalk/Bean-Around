@@ -3,31 +3,24 @@
   <div class="main-content home-page">
     <a href="/beans" class="my-bean-link">MY BEANS</a>
     <a href="/beans/new" class="add-bean-link">ADD BEAN</a>
-    <section class="display-container">
-      <table class="my-beans-list">
-        <thead>
-          <th>Roaster</th>
-          <th>Blend</th>
-          <th>Region</th>
-        </thead>
-        <tbody>
-            <% beans.forEach(function(b){ %>
-              <tr class="bean-values"> 
-                <td><%= b.roaster %></td>
-                <td><%= b.blendName %></td>
-                <td><%= b.region %></td>   
-                <td><a href="/beans/<%= b._id %>" class="see-details">see details</a></td>
-                <td>
-                  <form action="/beans/<%= b._id %>?_method=DELETE"
-                    class="delete-form" method="POST">
-                    <button type="submit">DELETE</button>
-                  </form>
-                </td>
-              </tr>
-            <% }) %>
-          </tbody>
-        </tbody>
-      </table>
+    <section class="display-container">      
+      <div class="my-beans">
+        <% beans.forEach(function(b){ %>
+          <div class="my-beans-card">
+            <div class="card-header">
+              <a href="/beans/<%= b._id %>" class="see-details"><%= b.roaster %></a>
+            </div>
+            <p><%= b.blendName %></p>
+            <p><%= b.region %></p>
+            <footer class="card-footer">
+              <form action="/beans/<%= b._id %>?_method=DELETE"
+                class="delete-form" method="POST">
+                <button type="submit" class="delete-button">REMOVE</button>
+              </form>
+            </footer>
+          </div>       
+          <% }) %>
+      </div>
     </section>
   </div>
 

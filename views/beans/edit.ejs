@@ -5,7 +5,7 @@
     <a href="/beans/new" class="add-bean-link">ADD BEAN</a>
     <section class="display-container">
       <h1>Edit Bean Form</h1>
-      <form id="edit-form" action="/beans/<%= bean._id %>?_method=PUT" method="POST">
+      <form class="new-form" action="/beans/<%= bean._id %>?_method=PUT" method="POST">
         <label>Roaster:</label>
         <input value="<%= bean.roaster %>" name="roaster"><br>
         <label>Blend Name:</label>
@@ -29,7 +29,7 @@
         <label for="rainforest-alliance" class="cblabel">Rainforest Alliance</label><br>
         <input type="checkbox" class="cb" id="smithsonian" name="smithsonianBF">
         <label for="smithsonian" class="cblabel">Smithsonian Bird Friendly</label><br>
-        <button class="edit-bean" type="submit">Edit Bean</button>   
+        <input class="edit-bean" type="submit" value="Edit Bean">   
       </form>
     </section>
   </div>

@@ -10,24 +10,26 @@
             <li><strong>Roast: </strong><%= bean.roast%></li>
             <li><strong>Region: </strong><%= bean.region%></li>
             <li><strong>Certifications:</strong></li>           
-            <% if (bean.fairTrade) { %>
-              <img src="/images/fairtrade.png" alt="">
-            <% }
-            <% if (bean.usdaOrganic) { %>
-              <img src="/images/usdaorganic.png" alt="">
-            <% }
-            <% if (bean.utzCertified) { %>
-              <img src="/images/utzcertified.png" alt="">
-            <% }
-            <% if (bean.rainforestAlliance) { %>
-              <img src="/images/rainforestalliance.png" alt="">
-            <% }
-            <% if (bean.smithsonianBF) { %>
-              <img src="/images/smithsonian.png" alt="">
-            <% } %>
+            <li>
+              <% if (bean.fairTrade) { %>
+                <img src="/images/fairtrade.png" alt="">
+              <% } %>
+              <% if (bean.usdaOrganic) { %>
+                <img src="/images/usdaorganic.png" alt="">
+              <% } %>
+              <% if (bean.utzCertified) { %>
+                <img src="/images/utzcertified.png" alt="">
+              <% } %>
+              <% if (bean.rainforestAlliance) { %>
+                <img src="/images/rainforestalliance.png" alt="">
+              <% } %>
+              <% if (bean.smithsonianBF) { %>
+                <img src="/images/smithsonian.png" alt="">
+              <% } %>
+            </li>
+            <a href="/beans/<%= bean._id %>/edit" class="edit-link">edit</a>
           </ul><br>
-      <a href="/beans/<%= bean._id %>/edit" class="edit-link">edit</a>
-
+        
         <hr>
           
         <h3>Review Your Brew</h3>
