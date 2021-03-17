@@ -58,7 +58,8 @@ function show(req, res) {
 
 // Delete a a bean entry
 function deleteBean(req, res) {
-  Bean.findByIdAndDelete(req.params.id, function() {
+  Bean.findByIdAndDelete(req.params.id, function(err, bean) {
+    if (!bean.userId.equals(req.user._id)) return res.redirect('/beans');
     res.redirect('/beans');
   })
 }

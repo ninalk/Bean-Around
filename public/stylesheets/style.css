@@ -110,7 +110,7 @@
   align-self: end;
   text-decoration: none;
   font-size: 28px;
-  color:rgb(174, 216, 102);
+  color:rgb(179, 255, 191);
   font-weight: bold;
   margin-left: 200px;
   width: 180px;
@@ -118,7 +118,7 @@
 }
 
 .add-bean-link:hover {
-  color:rgb(70, 198, 132);
+  color:#70ebb0;
 }
 .my-bean-link:hover {
   color: whitesmoke;
@@ -126,15 +126,17 @@
 
 /*  Style My Beans Page */
 .my-beans-card {
-  width: 240px;
+  width: 180px;
   height: 170px;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
   transition-duration: 0.3s;
   margin: 20px 14px 10px 8px;
   text-align: center;
-  padding: 12px;
-  color: rgb(77, 79, 77);
+  padding: 10px;
   background-image: linear-gradient(to bottom right, #efebe5, rgb(184, 162, 135));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .my-beans-card:hover {
@@ -149,35 +151,30 @@
 
 .my-beans-card p {
   margin: 0 auto;
+  color: rgb(77, 79, 77);
+  font-size: 18px;
 }
 
-.card-header {
-  margin-bottom: 16px;
-  margin-top: 16px;
+.my-beans-card h2 {
+  margin: 5px auto;
 }
 
 .see-details {
   text-decoration: none;
-  color: rgb(70, 94, 70);
-  font-size: 24px;
-  font-weight: bold;
+  color: #67869d;
   cursor: pointer;
-  transition-duration: .3s;
-}
-
-.see-details:hover {
-  font-size: 125%;
 }
 
 .delete-button {
   cursor: pointer;
-  background-color: rgb(79, 58, 58);
+  background-color: rgb(172, 149, 142);
   color:rgb(208, 211, 211);
-  border-radius: 10%;
+  border-radius: 1em;
   padding: 3px;
   transition-duration: .5s;
-  width: 80px;
+  width: 60px;
   font-size: 10px;
+  border-style: none;
 }
 
 .delete-button:hover {
@@ -185,7 +182,7 @@
 }
 
 .card-footer {
-  margin: 26px auto 0 auto;
+  margin: 15px auto 0 auto;
 }
 
 /*  Style Add Bean Form */
@@ -227,13 +224,11 @@ h1 {
 
 .new-form .cb {
   width: 40px;
-  margin: 0;
-  margin-left: 50px;
 }
 
-.new-form .cblabel {
-  margin-left: 0;
-  margin-right: 80px;
+.cblabel #fair-trade {
+  grid-column: 1 / 2;
+  grid-row: 1;
 }
 
 .new-form .certs {
@@ -254,6 +249,11 @@ h1 {
   background-color: rgb(70, 198, 132);
 }
 
+.cert-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
 
 /*  Style bean details show page */
 h2 {
@@ -262,7 +262,7 @@ h2 {
 
 .bean-details {
   margin: 0 10px 5px 10px;
-  text-align: left;
+  text-align: center;
 }
 
 .bean-details div {
@@ -271,6 +271,13 @@ h2 {
 
 .bean-details .bean-info {
   text-align: left;
+  border: 3px solid black;
+  padding: 14px;
+  background-color: #313840;
+  color:whitesmoke;
+  border-radius: 1em;
+  width: 800px;
+  height: 300px;
 }
 
 .bean-info {
@@ -284,6 +291,9 @@ h2 {
   padding-bottom: 5px; 
 }
 
+.bean-info .edit-link {
+  text-align: center;
+}
 
 /* Style Review Section */
 h3 {

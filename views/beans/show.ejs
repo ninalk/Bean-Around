@@ -31,8 +31,52 @@
             <a href="/beans/<%= bean._id %>/edit" class="edit-link">edit</a>
           </ul><br>
         
-        <hr>
-          
+        <br>
+        <h3>Reviews</h3>
+        <table id="display-reviews">
+          <thead>
+            <tr>
+              <td><strong>Brew Method</strong></td>
+              <td><strong>Aroma</strong></td>
+              <td><strong>Flavor</strong></td>
+              <td><strong>Acidity</strong></td>
+              <td><strong>Body</strong></td>
+              <td><strong>Bitterness</strong></td>
+              <td><strong>Overall</strong></td>
+              <td><strong>Notes</strong></td>
+              <td><strong>Date</strong></td>
+            </tr>
+          </thead>
+          <tbody>
+            <% if (bean.reviews.length) { %>
+              <% bean.reviews.forEach(function(r) { %>
+            <tr>
+              <td><%= r.brewMethod %></td>
+              <td><%= r.aroma %></td>
+              <td><%= r.flavor %></td>
+              <td><%= r.acidity %></td>
+              <td><%= r.body %></td>
+              <td><%= r.bitterness %></td>
+              <td><%= r.overall %></td>
+              <td><%= r.text %></td>
+              <td><%= r.reviewDate %></td>
+              <td>
+                <form action="/reviews/<%= r._id %>?_method=DELETE"
+                  class="delete-review" method="POST">                        
+                  <button type="submit">delete</button>
+                </form>
+              </td>
+            </tr>
+              <% }); %>
+            <% } else { %> 
+              <h5>No Reviews Yet</h5>
+            <% } %>
+          </tbody>           
+        </table>
+        <br>
+        <br>
+        <br>
+
         <h3>Review Your Brew</h3>
         <form id="add-review-form" action="/beans/<%= bean._id %>/reviews" method="POST">
           <div class="review-rating">
@@ -103,44 +147,6 @@
           <input type="submit" value="Add Review" class="add-review">
         </form> 
 
-        <table id="display-reviews">
-          <thead>
-            <tr>
-              <td><strong>Brew Method</strong></td>
-              <td><strong>Aroma</strong></td>
-              <td><strong>Flavor</strong></td>
-              <td><strong>Acidity</strong></td>
-              <td><strong>Body</strong></td>
-              <td><strong>Bitterness</strong></td>
-              <td><strong>Overall</strong></td>
-              <td><strong>Notes</strong></td>
-            </tr>
-          </thead>
-          <tbody>
-            <% if (bean.reviews.length) { %>
-              <% bean.reviews.forEach(function(r) { %>
-            <tr>
-              <td><%= r.brewMethod %></td>
-              <td><%= r.aroma %></td>
-              <td><%= r.flavor %></td>
-              <td><%= r.acidity %></td>
-              <td><%= r.body %></td>
-              <td><%= r.bitterness %></td>
-              <td><%= r.overall %></td>
-              <td><%= r.text %></td>
-              <td>
-                <form action="/reviews/<%= r._id %>?_method=DELETE"
-                  class="delete-review" method="POST">                        
-                  <button type="submit">delete</button>
-                </form>
-              </td>
-            </tr>
-              <% }); %>
-            <% } else { %> 
-              <h5>No Reviews Yet</h5>
-            <% } %>
-          </tbody>           
-        </table>
       </div>
     </section>
   </div>

@@ -18,7 +18,12 @@ const reviewSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  date: Date
+  reviewDate: {
+    type: Date, 
+    default: function() {
+      return new Date;
+    }
+  }
 }, {
   timestamp: true
 });

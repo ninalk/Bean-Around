@@ -7,11 +7,11 @@
       <div class="my-beans">
         <% beans.forEach(function(b){ %>
           <div class="my-beans-card">
-            <div class="card-header">
-              <a href="/beans/<%= b._id %>" class="see-details"><%= b.roaster %></a>
-            </div>
-            <p><%= b.blendName %></p>
-            <p><%= b.region %></p>
+            <a href="/beans/<%= b._id %>" class="see-details">
+              <h2><%= b.roaster %></h2>
+              <p><%= b.blendName %></p>
+              <p><%= b.region %></p>
+            </a>
             <footer class="card-footer">
               <form action="/beans/<%= b._id %>?_method=DELETE"
                 class="delete-form" method="POST">

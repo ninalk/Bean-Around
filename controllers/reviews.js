@@ -8,9 +8,14 @@ module.exports = {
 function create(req, res) {
   Bean.findById(req.params.id, function(err, bean) {
     bean.reviews.push(req.body);
+    
+    // const date = bean.reviews[bean.reviews.length - 1].reviewDate;
+    // const reviewDate = date.toISOString().slice(0, 10);
+    // console.log(reviewDate, ' this is the date!')
+    
+    bean.reviews[bean.reviews.length - 1].userId = req.user._id;
     console.log(bean, ' this is the updated bean')
 
-    bean.reviews[bean.reviews.length - 1].userId = req.user._id;
     bean.save(function(err) {
       res.redirect(`/beans/${bean._id}`);
     });

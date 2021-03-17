@@ -16,21 +16,44 @@
         <input value="<%= bean.description %>" name="description"><br>
         <label>Roast:</label>
         <select name="roast">
-          <option value="light" selected>light</option>
-          <option value="medium">medium</option>
-          <option value="dark">dark</option>
+          <% if (bean.roast === "light") { %>
+            <option value="light" selected>light</option>         
+          <% } else if (bean.roast === "medium") { %>
+            <option value="medium" selected>medium</option>
+          <% } else if (bean.roast === "dark") { %>
+            <option value="dark">dark</option>
+          <% } %>
         </select><br>
         <label class="certs">Certifications:</label><br>
-        <input type="checkbox" class="cb" id="fair-trade" name="fairTrade">
+        <% if (bean.fairTrade) { %>
+          <input type="checkbox" class="cb" id="fair-trade" name="fairTrade" checked>
+        <% } else { %>
+          <input type="checkbox" class="cb" id="fair-trade" name="fairTrade">
+        <% } %>
         <label for="fair-trade" class="cblabel">Fair Trade</label><br>
-        <input type="checkbox" class="cb" id="usda-organic" name="usdaOrganic">
+        <% if (bean.usdaOrganic) { %>
+          <input type="checkbox" class="cb" id="usda-organic" name="usdaOrganic" checked>
+        <% } else { %>
+          <input type="checkbox" class="cb" id="usda-organic" name="usdaOrganic">
+        <% } %>
         <label for="usda-organic" class="cblabel">USDA Organic</label><br>
-        <input type="checkbox" class="cb" name="utzCertified">
+        <% if (bean.utzCertified) { %>
+          <input type="checkbox" class="cb" name="utzCertified" checked>
+        <% } else { %>
+          <input type="checkbox" class="cb" name="utzCertified">
+        <% } %>
         <label for="utz-certified" class="cblabel">UTZ Certified</label><br>
-        <input type="checkbox" class="cb" id="rainforest-alliance" name="rainforestAlliance">
+        <% if (bean.rainforestAlliance) { %>
+          <input type="checkbox" class="cb" id="rainforest-alliance" name="rainforestAlliance" checked>
+        <% } else { %>
+          <input type="checkbox" class="cb" id="rainforest-alliance" name="rainforestAlliance">
+        <% } %>
         <label for="rainforest-alliance" class="cblabel">Rainforest Alliance</label><br>
-        <input type="checkbox" class="cb" id="smithsonian" name="smithsonianBF">
+        <% if (bean.smithsonianBF) { %>
+          <input type="checkbox" class="cb" id="smithsonian" name="smithsonianBF" checked>
+        <% } else { %>
         <label for="smithsonian" class="cblabel">Smithsonian Bird Friendly</label><br>
+        <% } %>
         <input class="edit-bean" type="submit" value="Edit Bean">   
       </form>
     </section>
