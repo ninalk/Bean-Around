@@ -17,7 +17,8 @@ const reviewSchema = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
     ref: 'User'
-  }
+  },
+  date: Date
 }, {
   timestamp: true
 });
@@ -40,7 +41,8 @@ const beanSchema = new Schema({
   usdaOrganic: {type: Boolean, default: false},
   utzCertified: {type: Boolean, default: false},
   rainforestAlliance: {type: Boolean, default: false},
-  smithsonianBF: {type: Boolean, default: false}
+  smithsonianBF: {type: Boolean, default: false},
+  description: String
 }, {
   timestamps: true
 });

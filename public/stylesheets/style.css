@@ -101,7 +101,7 @@
   text-decoration: none;
   font-size: 28px;
   color: rgb(215, 215, 215); 
-  transition: 0.4s;
+  transition-duration: 0.4s;
 }
 
 .add-bean-link {
@@ -110,15 +110,15 @@
   align-self: end;
   text-decoration: none;
   font-size: 28px;
-  color:rgb(176, 244, 176);
+  color:rgb(174, 216, 102);
   font-weight: bold;
   margin-left: 200px;
   width: 180px;
-  transition: 0.4s;
+  transition-duration: 0.4s;
 }
 
 .add-bean-link:hover {
-  color:rgb(50, 164, 105);
+  color:rgb(70, 198, 132);
 }
 .my-bean-link:hover {
   color: whitesmoke;
@@ -129,11 +129,12 @@
   width: 240px;
   height: 170px;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-  transition: 0.3s;
+  transition-duration: 0.3s;
   margin: 20px 14px 10px 8px;
   text-align: center;
   padding: 12px;
   color: rgb(77, 79, 77);
+  background-image: linear-gradient(to bottom right, #efebe5, rgb(184, 162, 135));
 }
 
 .my-beans-card:hover {
@@ -165,7 +166,7 @@
 }
 
 .see-details:hover {
-  color: rgb(127, 188, 127);
+  font-size: 125%;
 }
 
 .delete-button {
@@ -261,7 +262,7 @@ h2 {
 
 .bean-details {
   margin: 0 10px 5px 10px;
-  text-align: center;
+  text-align: left;
 }
 
 .bean-details div {
@@ -269,7 +270,7 @@ h2 {
 }
 
 .bean-details .bean-info {
-  text-align: center;
+  text-align: left;
 }
 
 .bean-info {

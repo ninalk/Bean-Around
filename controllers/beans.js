@@ -81,6 +81,7 @@ function update(req, res) {
     bean.roaster = req.body.roaster;
     bean.blendName = req.body.blendName;
     bean.region = req.body.region;
+    bean.description = req.body.description;
     bean.roast = req.body.roast;
     bean.fairTrade = !!req.body.fairTrade;
     bean.usdaOrganic = !!req.body.usdaOrganic;
@@ -89,7 +90,7 @@ function update(req, res) {
     bean.smithsonianBF = !!req.body.smithsonianBF;
 
     bean.save(function(err) {
-      if (err) return res.render('beans/edit');
+      if (err) return res.render('beans/edit', { title: 'BEAN AROUND', bean });
       // redirect back to bean's show view to ensure updates made
       res.redirect(`/beans/${bean._id}`);
     })
