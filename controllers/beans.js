@@ -13,6 +13,7 @@ module.exports = {
 // Find beans that match userId to display users beans only
 function index(req, res, next) {
   Bean.find({'userId': req.user._id}, function(err, beans) {
+
     res.render('beans/index', { 
       title: 'BEAN AROUND',
       beans, 
@@ -77,8 +78,6 @@ function update(req, res) {
   Bean.findById(req.params.id, function(err, bean) {
     if(!bean.userId.equals(req.user._id)) return res.redirect('/beans');
     // Update body of the form
-    console.log(req.body, ' BODY!')
-
     bean.roaster = req.body.roaster;
     bean.blendName = req.body.blendName;
     bean.region = req.body.region;

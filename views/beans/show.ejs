@@ -43,15 +43,15 @@
             <% if (bean.reviews.length) { %>
               <thead>
                 <tr>
-                  <td><strong>Brew Method</strong></td>
-                  <td><strong>Aroma</strong></td>
-                  <td><strong>Flavor</strong></td>
-                  <td><strong>Acidity</strong></td>
-                  <td><strong>Body</strong></td>
-                  <td><strong>Bitterness</strong></td>
-                  <td><strong>Overall</strong></td>
-                  <td><strong>Notes</strong></td>
-                  <td><strong>Date</strong></td>
+                  <th><strong>Brew Method</strong></th>
+                  <th><strong>Aroma</strong></th>
+                  <th><strong>Flavor</strong></th>
+                  <th><strong>Acidity</strong></th>
+                  <th><strong>Body</strong></th>
+                  <th><strong>Bitterness</strong></th>
+                  <th><strong>Overall</strong></th>
+                  <th><strong>Notes</strong></th>
+                  <th><strong>Date</strong></th>
                 </tr>
               </thead>
               <% bean.reviews.forEach(function(r) { %>
@@ -69,7 +69,7 @@
                   <td>
                     <form action="/reviews/<%= r._id %>?_method=DELETE"
                       class="delete-review" method="POST">                        
-                      <button type="submit">delete</button>
+                      <button type="submit">x</button>
                     </form>
                   </td>
                 </tr>
