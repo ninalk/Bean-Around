@@ -1,25 +1,22 @@
 /*  Style partials header and landing page */
 .background-image { 
   background: url(/images/2389930.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
+  -webkit-background-size: cover;
   background-size: cover;
   background-color: #efebe5;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.preload * {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -ms-transition: none !important;
-  -o-transition: none !important;
+body, .nav-bar * {
+  margin: 0;
 }
 
 .logo-wrapper {
-  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
 
@@ -28,14 +25,14 @@
 }
 
 .google-login {
-  font-size: 26px;
-  color: rgb(215, 215, 215);
   background-color: rgb(46, 47, 47);
-  width: 310px;
-  transition-duration: .5s;
-  margin: 0 auto;
   border-radius: 1em;
+  color: rgb(215, 215, 215);
+  font-size: 26px;
+  margin: 0 auto;
   padding: 4px;
+  transition-duration: .5s;
+  width: 310px;
 }
 
 .google-login:hover {
@@ -43,82 +40,91 @@
 }
 
 .landing-title {
-  font-size: 100px;
-  padding: 10%;
   color: rgb(215, 215, 215);
+  font-size: 100px;
   font-weight: bold;
+  padding: 10%;
+}
+
+.nav-bar {
+  background-color:rgb(38, 29, 29, 0.9);
 }
 
 .nav-bar a {
-  text-decoration: none;
-  font-size: 24px;
   color: rgb(215, 215, 215); 
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  text-decoration: none;
+  transition-duration: 0.4s;
+}
+
+.nav-bar a:hover {
+  color: whitesmoke;
 }
 
 .nav-bar ul {
+  color: rgb(215, 215, 215);
   display: flex;
+  font-size: 24px;
+  justify-content: space-between;
   list-style-type: none;
   margin: 0;
-  padding: 12px;
-  justify-content: space-between;
-  font-size: 26px;
-  font-weight: bold;
+  padding: 14px;
 }
 
 
 /*  Style the main content container */
 .main-content {
-  display: grid;
   align-items: center;
-  justify-content: center;
+  display: grid;
   grid-template-columns: 60px 300px auto 300px 60px;
   grid-template-rows: 110px auto;
+  justify-content: center;
 }
 
 .display-container {
-  min-width: 900px;
+  background-color: #efebe5;
+  border-radius: 4px;
+  border: solid 3px lightgray;
+  color: rgb(40, 39, 39);
+  font-size: 20px;
+  grid-column-end: 5;
+  grid-column-start: 2;
+  grid-row: 2 / 7;
+  margin-top: 0;
   max-width: 900px;
   min-height: 900px;
-  border: solid 10px rgb(208 178 157);
-  color: rgb(40, 39, 39);
-  margin-top: 0;
-  border-radius: 1em;
-  background-color: rgb(226 211 195);
-  font-size: 20px;
-  grid-row: 2 / 7;
-  grid-column-start: 2;
-  grid-column-end: 5;
+  min-width: 900px;
   padding: 12px;
 }
 
 .my-bean-link {
+  align-self: end;
+  color: rgb(215, 215, 215); 
+  font-size: 28px;
   grid-column: 2;
   grid-row: 1;
   justify-self: left;
   margin-left: 40px;
-  align-self: end;
   text-decoration: none;
-  font-size: 28px;
-  color: rgb(215, 215, 215); 
   transition-duration: 0.4s;
 }
 
 .add-bean-link {
+  align-self: end;
+  color:rgb(241, 244, 184);
+  font-size: 28px;
+  font-weight: bold;
   grid-column: 2 / 4;
   grid-row: 1;
-  align-self: end;
-  text-decoration: none;
-  font-size: 28px;
-  color:rgb(179, 255, 191);
-  font-weight: bold;
   margin-left: 200px;
-  width: 180px;
+  text-decoration: none;
   transition-duration: 0.4s;
+  width: 180px;
 }
 
 .add-bean-link:hover {
-  color:#70ebb0;
+  color:#fcd78c;
 }
 .my-bean-link:hover {
   color: whitesmoke;
@@ -126,17 +132,17 @@
 
 /*  Style My Beans Page */
 .my-beans-card {
-  width: 180px;
-  height: 170px;
+  background-image: linear-gradient(to bottom right, #efebe5, rgb(235, 220, 209));
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-  transition-duration: 0.3s;
-  margin: 20px 14px 10px 8px;
-  text-align: center;
-  padding: 10px;
-  background-image: linear-gradient(to bottom right, #efebe5, rgb(184, 162, 135));
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 30px;
+  height: 170px;
   justify-content: center;
+  margin: 20px 14px 10px 8px;
+  padding: 10px;
+  text-align: center;
+  transition-duration: 0.3s;
+  width: 240px;
 }
 
 .my-beans-card:hover {
@@ -150,31 +156,33 @@
 }
 
 .my-beans-card p {
-  margin: 0 auto;
   color: rgb(77, 79, 77);
   font-size: 18px;
+  margin: 0 auto;
+  grid-row: 1;
 }
 
 .my-beans-card h2 {
   margin: 5px auto;
+  grid-row: 1 ;
 }
 
 .see-details {
-  text-decoration: none;
   color: #67869d;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .delete-button {
-  cursor: pointer;
   background-color: rgb(172, 149, 142);
-  color:rgb(208, 211, 211);
   border-radius: 1em;
+  border-style: none;
+  color:rgb(208, 211, 211);
+  cursor: pointer;
+  font-size: 10px;
   padding: 3px;
   transition-duration: .5s;
   width: 60px;
-  font-size: 10px;
-  border-style: none;
 }
 
 .delete-button:hover {
@@ -182,19 +190,19 @@
 }
 
 .card-footer {
-  margin: 15px auto 0 auto;
+  grid-row: 2;
 }
 
 /*  Style Add Bean Form */
 .new-form {
+  align-items: center;
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
 }
 
 h1 {
-  margin: 10px;
   color: rgb(46, 47, 47);
+  margin: 10px;
   text-align: center;
 }
 
@@ -203,32 +211,28 @@ h1 {
 }
 
 .new-form input {
-  vertical-align: middle;
+  background-color: #fff;
+  border-radius: 1em;
+  border: 1px solid #ddd;
   margin: 5px 50px 5px 50px;
   padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  vertical-align: middle;
   width: 100em;
-  border-radius: 1em;
 }
 
 .new-form select {
-  vertical-align: middle;
+  background-color: #fff;
+  border-radius: 1em;
+  border: 1px solid #ddd;
   margin: 5px 700px 5px 50px;
   padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  vertical-align: middle;
   width: 10em;
-  border-radius: 1em;
 }
 
 .new-form .cb {
+  margin-right: auto;
   width: 40px;
-}
-
-.cblabel #fair-trade {
-  grid-column: 1 / 2;
-  grid-row: 1;
 }
 
 .new-form .certs {
@@ -236,12 +240,12 @@ h1 {
 }
 
 .new-form .add-bean {
-  padding: 10px 20px;
   background-color: rgb(60, 149, 103);
   border: 1px solid #ddd;
   color: white;
   cursor: pointer;
   margin: 30px 50px;
+  padding: 10px 20px;
   transition-duration: 0.5s;
 }
 
@@ -249,19 +253,22 @@ h1 {
   background-color: rgb(70, 198, 132);
 }
 
-.cert-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+.new-form .cblabel {
+  margin-left: 0;
 }
 
 /*  Style bean details show page */
 h2 {
+  margin: 10px;
   text-align: center;
 }
 
 .bean-details {
-  margin: 0 10px 5px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  margin: 10px 38px;
+  row-gap: 10px;
   text-align: center;
 }
 
@@ -270,39 +277,54 @@ h2 {
 }
 
 .bean-details .bean-info {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  color:rgb(38, 29, 29, 0.9);
+  display: grid;
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  grid-template-rows: 60px auto 40px;
+  height: 380px;
+  margin: auto;
+  padding: 10px;
   text-align: left;
-  border: 3px solid black;
-  padding: 14px;
-  background-color: #313840;
-  color:whitesmoke;
-  border-radius: 1em;
   width: 800px;
-  height: 300px;
 }
 
-.bean-info {
-  display: inline-block; 
+.bean-info ul {
 	text-align: left; 
+  display: inline-block; 
   list-style: none;
   margin: 0;
 }
 
 .bean-info li {
-  padding-bottom: 5px; 
+  padding: 4px; 
 }
 
 .bean-info .edit-link {
+  align-items: center;
+}
+
+.edit-link-wrapper {
   text-align: center;
 }
 
 /* Style Review Section */
-h3 {
-  margin: 10px 0 10px 0;
+h6 {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+  margin: 0;
+  padding: 14px 0;
   text-align: center;
+  width: 200px;
 }
 
 #add-review-form {
   text-align: center;
+  font-size: 14px;
 }
 
 #add-review-form label {
@@ -310,13 +332,13 @@ h3 {
 }
 
 #add-review-form select {
-  vertical-align: middle;
+  background-color: #fff;
+  border-radius: 1em;
+  border: 1px solid #ddd;
   margin: 5px 20px 5px 5px;
   padding: 5px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  vertical-align: middle;
   width: 8em;
-  border-radius: 1em;
 }
 
 #add-review-form .rating select  {
@@ -328,14 +350,18 @@ h3 {
   width: 14vw;
 }
 
+.brew {
+  align-items: center;
+}
+
 .add-review {
-  padding: 10px 20px;
   background-color: rgb(60, 149, 103);
+  border-radius: 1em;
   border: 1px solid #ddd;
   color: white;
   cursor: pointer;
-  border-radius: 1em;
   margin: 10px 0;
+  padding: 10px 20px;
   transition-duration: 0.5s;
 }
 
@@ -345,8 +371,8 @@ h3 {
 
 #review-notes {
   background-color: #fff;
-  border: 1px solid #ddd;
   border-radius: 1em;
+  border: 1px solid #ddd;
   width: 300px;
 }
 
@@ -355,27 +381,39 @@ h3 {
   width: -webkit-fill-available;
 }
 
+.display-reviews-section {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+}
+
+.review-section {
+  grid-column: 1 / span 2;
+  grid-row: 3
+}
+
 /* Style edit bean form and link */
 .edit-link {
   background-color: rgb(237 236 237);
+  border-radius: 10%;
   border: .5px solid black;
-  text-decoration: none;
   color: black;
   font-size: 14px;
   padding: 2px 12px;
-  border-radius: 10%;
+  position: static;
+  text-decoration: none;
 }
 
 .new-form .edit-bean {
-  padding: 10px 20px;
   background-color: rgb(60, 149, 103);
   border: 1px solid #ddd;
   color: white;
   cursor: pointer;
   margin-top: 20px;
+  padding: 10px 20px;
   transition-duration: 0.5s;
 }
 
 .new-form .edit-bean:hover {
   background-color: rgb(70, 198, 132);
 }
+
