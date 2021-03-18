@@ -53,6 +53,7 @@ function create(req, res) {
 // Show the details of each bean entry
 function show(req, res) {
   Bean.findById(req.params.id, function(err, bean) {
+    console.log(bean, ' this is BEAN!')
     res.render('beans/show', { title: 'BEAN AROUND', bean });
   });
 }

@@ -224,7 +224,7 @@ h1 {
 
 .new-form input {
   background-color: #fff;
-  border-radius: 1em;
+  border-radius: 4px;
   border: 1px solid #ddd;
   margin: 5px 50px 5px 50px;
   padding: 10px;
@@ -234,7 +234,7 @@ h1 {
 
 .new-form select {
   background-color: #fff;
-  border-radius: 1em;
+  border-radius: 4px;
   border: 1px solid #ddd;
   margin: 5px 700px 5px 50px;
   padding: 10px;
@@ -350,7 +350,7 @@ h6 {
 
 #add-review-form select {
   background-color: #fff;
-  border-radius: 1em;
+  border-radius: 4px;
   border: 1px solid #ddd;
   margin: 5px 20px 5px 5px;
   padding: 5px;
@@ -372,7 +372,7 @@ h6 {
 
 .add-review {
   background-color: rgb(60, 149, 103);
-  border-radius: 1em;
+  border-radius: 4px;
   border: 1px solid #ddd;
   color: white;
   cursor: pointer;
@@ -387,14 +387,14 @@ h6 {
 
 #review-notes {
   background-color: #fff;
-  border-radius: 1em;
+  border-radius: 4px;
   border: 1px solid #ddd;
   width: 300px;
 }
 
 #display-reviews {
   font-size: 14px;
-  margin: 10px 0;
+  margin-top: 10px;
 }
 
 .display-reviews-section {
@@ -417,7 +417,7 @@ th {
   width: 90px;
 }
 
-tr:nth-child(even) {
+.display-reviews tr:nth-child(even) {
   background-color: lightgray;
 }
 

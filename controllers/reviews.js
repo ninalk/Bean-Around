@@ -10,11 +10,6 @@ function create(req, res) {
   Bean.findById(req.params.id, function(err, bean) {
     bean.reviews.push(req.body);
     bean.reviews[bean.reviews.length - 1].userId = req.user._id;
-    console.log(bean, ' this is bean')
-    // const date = bean.reviews[bean.reviews.length - 1].reviewDate;
-    // const brewDate = date.toISOString().slice(0, 10);
-    // console.log(brewDate, ' brewDate');
-    // date = brewDate;
 
     bean.save(function(err) {
       res.redirect(`/beans/${bean._id}`);
