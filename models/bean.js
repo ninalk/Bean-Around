@@ -19,9 +19,14 @@ const reviewSchema = new Schema({
     ref: 'User'
   },
   reviewDate: {
-    type: Date, 
+    type: String, 
     default: function() {
-      return new Date;
+      const date = new Date();
+      const d = date.getDate();
+      const m = date.getMonth()+1;
+      const y = date.getFullYear();
+      const brewDate = m + '/' + d + '/'+ y;
+      return brewDate;
     }
   }
 }, {
