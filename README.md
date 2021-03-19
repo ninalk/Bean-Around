@@ -35,5 +35,5 @@ Bean Around URL: https://bean-around.herokuapp.com/
 ## Next Steps:
 
 1. Make web app mobile friendly since a phone is easier to access while making a brew.
-2. Average review ratings and make apparent on bean cards. This way you can sort by highest ratings.
+2. Average review ratings and make apparent on bean cards to sort by highest ratings.
 3. Add relationships between users. This way you can follow friends and share beans.
