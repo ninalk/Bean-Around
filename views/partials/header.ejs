@@ -11,10 +11,15 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <title><%= title %></title>
 </head>
-<body>
+<body class="preload">
   <nav class="nav-bar">
     <ul>
       <li><a href="/beans" >BEAN AROUND</a></li>
-      <li><a href="/logout">Hi, <%= user.name %></a></li>
+      <li>
+        <a href="/logout" class="logout-container">
+          <img src="/images/logout.png" alt="">
+          Hi, <%= user.name %>
+        </a>
+      </li>
     </ul>
   </nav>

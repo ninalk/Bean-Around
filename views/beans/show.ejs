@@ -30,13 +30,14 @@
               <% } %>
             </li>
           </ul>
+          <% if (bean.userId.equals(user && user._id)) { %>
           <div class="edit-link-wrapper">
             <a href="/beans/<%= bean._id %>/edit" class="edit-link">edit</a>
           </div>
+          <% } %>
         </div>
-        
-        
         <br>
+                
         <div class="display-reviews-section">
           <h6>Reviews</h6>
           <table id="display-reviews">
@@ -52,7 +53,9 @@
                   <th><strong>Overall</strong></th>
                   <th><strong>Notes</strong></th>
                   <th><strong>Date</strong></th>
+                  <% if (bean.userId.equals(user && user._id)) { %>
                   <th></th>
+                  <% } %>
                 </tr>
               </thead>
               <% bean.reviews.forEach(function(r) { %>
@@ -67,12 +70,14 @@
                   <td><%= r.overall %></td>
                   <td><%= r.text %></td>
                   <td><%= r.reviewDate %></td>
+                  <% if (r.userId.equals(user && user._id)) { %>
                   <td>
                     <form action="/reviews/<%= r._id %>?_method=DELETE"
                       class="delete-review" method="POST">                        
                       <button type="submit">x</button>
                     </form>
                   </td>
+                  <% } %>
                 </tr>
               <% }); %>
             <% } else { %> 
@@ -82,6 +87,7 @@
           </table>
         </div>
 
+        <% if (bean.userId.equals(user && user._id)) { %>
         <div class="review-section">
           <h6 class="brew">Review your Brew</h6>
           <form id="add-review-form" action="/beans/<%= bean._id %>/reviews" method="POST">
@@ -152,11 +158,9 @@
             <textarea name="text" id="review-notes"></textarea><br>
             <input type="submit" value="Add Review" class="add-review">
           </form> 
-
+        <% } %>
         </div>
-          
-
-        </div>
+      </div>
     </section>
   </div>
 

@@ -9,9 +9,15 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+
 body, .nav-bar * {
   margin: 0;
-  
 }
 
 .logo-wrapper {
@@ -74,6 +80,14 @@ body, .nav-bar * {
   padding: 14px;
 }
 
+.logout-container {
+  display: flex;
+  align-items: center;
+}
+
+.logout-container img {
+  margin-right: 5px;
+}
 
 /*  Style the main content container */
 .main-content {
@@ -134,22 +148,19 @@ body, .nav-bar * {
 
 .bean-count {
   align-self: end;
-  color: rgb(215, 215, 215); 
+  color: whitesmoke; 
   font-size: 24px;
   grid-column: 4;
   grid-row: 1;
   justify-self: end;
-  margin: 0;
+  margin: 0 40px;
 }
 
 /*  Style My Beans Page */
 .my-beans-card {
   background-image: linear-gradient(to bottom right, #efebe5, rgb(220, 211, 192));
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-  display: grid;
-  grid-template-rows: 1fr 30px;
   height: 170px;
-  justify-content: center;
   margin: 20px 14px 10px 8px;
   padding: 10px;
   text-align: center;
@@ -171,12 +182,10 @@ body, .nav-bar * {
   color: rgb(77, 79, 77);
   font-size: 18px;
   margin: 0 auto;
-  grid-row: 1;
 }
 
 .my-beans-card h2 {
   margin: 5px auto;
-  grid-row: 1 ;
 }
 
 .see-details {
@@ -186,23 +195,23 @@ body, .nav-bar * {
 }
 
 .delete-button {
-  background-color: rgb(38, 29, 29, 0.3);
-  border-radius: 1em;
+  background-color: inherit;
+  border-radius: 4px;
   border-style: none;
-  color:rgb(208, 211, 211);
+  color: rgb(149, 145, 145);
   cursor: pointer;
-  font-size: 10px;
-  padding: 3px;
+  font-size: 16px;
+  padding: 5px;
   transition-duration: .5s;
-  width: 60px;
+  width: 25px;
 }
 
 .delete-button:hover {
-  background-color:rgb(38, 29, 29, 0.6);
+  background-color:#d8ccb4;
 }
 
-.card-footer {
-  grid-row: 2;
+.delete-card {
+  float: right;
 }
 
 /*  Style Add Bean Form */

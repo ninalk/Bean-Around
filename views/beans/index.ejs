@@ -18,20 +18,20 @@
         <% beans.forEach(function(b){ %>
           <div class="my-beans-card">
             <a href="/beans/<%= b._id %>" class="see-details">
+              <div class="delete-card">
+                <form action="/beans/<%= b._id %>?_method=DELETE"
+                  class="delete-form" method="POST">
+                  <button type="submit" class="delete-button">X</button>
+                </form>
+              </div>
               <h2><%= b.roaster %></h2>
               <p><%= b.blendName %></p>
               <p><%= b.region %></p>
             </a>
-            <footer class="card-footer">
-              <form action="/beans/<%= b._id %>?_method=DELETE"
-                class="delete-form" method="POST">
-                <button type="submit" class="delete-button">REMOVE</button>
-              </form>
-            </footer>
           </div>       
           <% }) %>
       </div>
     </section>
   </div>
 
-  <%- include('../partials/footer') %>
+<%- include('../partials/footer') %>
