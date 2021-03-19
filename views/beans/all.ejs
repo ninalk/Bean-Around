@@ -4,7 +4,7 @@
     <a href="/beans" class="my-bean-link">MY BEANS</a>
     <a href="/beans/new" class="add-bean-link">ADD BEAN</a>
     <p class="bean-count">Bean Count: <%= beans.length %></p>
-    <section class="display-container">
+    <section class="display-container">      
       <div class="dropdown">
         <button class="dropbtn">View
           <i class="fa fa-caret-down"></i>
@@ -13,7 +13,7 @@
           <a href="/beans/all">See everyone's beans</a>
         </div>
         </button>
-      </div>      
+      </div>
       <div class="my-beans">
         <% beans.forEach(function(b){ %>
           <div class="my-beans-card">
@@ -23,10 +23,12 @@
               <p><%= b.region %></p>
             </a>
             <footer class="card-footer">
-              <form action="/beans/<%= b._id %>?_method=DELETE"
-                class="delete-form" method="POST">
-                <button type="submit" class="delete-button">REMOVE</button>
-              </form>
+              <% if (b.userId.equals(user && user._id)) { %>
+                <form action="/beans/<%= b._id %>?_method=DELETE"
+                  class="delete-form" method="POST">
+                  <button type="submit" class="delete-button">REMOVE</button>
+                </form>
+              <% } %>
             </footer>
           </div>       
           <% }) %>

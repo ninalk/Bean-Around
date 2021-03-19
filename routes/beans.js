@@ -2,8 +2,11 @@ var express = require('express');
 var router = express.Router();
 const beansCtrl = require('../controllers/beans');
 
-// view all user's rated coffee beans
+// view all user's coffee beans
 router.get('/', isLoggedIn, beansCtrl.index);
+
+// view all beans regardless of user
+router.get('/all', beansCtrl.allBeans);
 
 // view a form to add a bean
 router.get('/new', isLoggedIn, beansCtrl.new);

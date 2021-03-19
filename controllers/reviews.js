@@ -8,9 +8,11 @@ module.exports = {
 // Add a review to a bean entry
 function create(req, res) {
   Bean.findById(req.params.id, function(err, bean) {
+    if (!bean.userId.equals(req.user._id)) return res.redirect(`/beans/${bean._id}`);
+
     bean.reviews.push(req.body);
     bean.reviews[bean.reviews.length - 1].userId = req.user._id;
-
+        
     bean.save(function(err) {
       res.redirect(`/beans/${bean._id}`);
     });

@@ -2,6 +2,7 @@ const Bean = require('../models/bean');
 
 module.exports = {
   index,
+  allBeans,
   new: newBean,
   create,
   show,
@@ -17,6 +18,17 @@ function index(req, res, next) {
     res.render('beans/index', { 
       title: 'BEAN AROUND',
       beans, 
+    });
+  });
+}
+
+// Find all beans regardless of user
+function allBeans(req, res) {
+  Bean.find({}, function(err, beans) {
+    
+    res.render('beans/all', {
+      title: 'BEAN AROUND',
+      beans
     });
   });
 }
@@ -69,7 +81,7 @@ function deleteBean(req, res) {
 // View a form to edit bean entry
 function edit(req, res) {
   Bean.findById(req.params.id, function(err, bean) {
-    if (!bean.userId.equals(req.user._id)) return res.redirect('/beans');
+    if (!bean.userId.equals(req.user._id)) return res.redirect(`/beans/${bean._id}`);
     res.render('beans/edit', { title: 'BEAN AROUND', bean });
   });
 }

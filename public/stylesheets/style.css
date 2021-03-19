@@ -452,3 +452,46 @@ th {
   background-color: rgb(70, 198, 132);
 }
 
+/*  Style All beans page */
+
+.dropdown {
+  margin-left: 800px;
+  overflow: hidden; 
+  width: 78px;
+}
+
+.dropdown .dropbtn {
+  background-color: whitesmoke;
+  border: 1px solid lightgray;
+  color: rgb(55, 52, 52);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 4px 16px;
+  margin: 0;
+}
+
+.dropdown-content {
+  background-color:whitesmoke;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  display: none;
+  min-width: 160px;
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  display: block;
+  float: none;
+  padding: 4px 16px;
+  text-align: left;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
