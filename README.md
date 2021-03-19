@@ -1,4 +1,4 @@
-<img src="/images/Landing-page.png">
+<img src="/public/images/Landing-page.png">
 
 # Bean Around
 
