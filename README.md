@@ -11,11 +11,11 @@ Bean Around is a full-stack web application for coffee lovers who want to keep t
 ## Screenshots:
 
 Index Page:
-<img src="/images/index-page.png">
+<img src="/public/images/index-page.png">
 Edit Bean Page:
-<img src="/images/edit-bean-form.png">
+<img src="/public/images/edit-bean-form.png">
 Show Bean Details Page:
-<img src="/images/show-details-page.png">
+<img src="/public/images/show-details-page.png">
 
 ## Technologies Used:
 
